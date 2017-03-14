@@ -48,7 +48,7 @@ public class CompliantNode implements Node {
             Set<Transaction> outTx = new HashSet<>();
             for (Transaction tx : sendTransactions) {
                 int count = uniqueTx.get(tx).size();
-                if (count >= Math.min(folsLen - malsLen, (folsLen - malsLen) * p_graph * p_txDistribution * numRounds)) {
+                if (count >= Math.min(folsLen - malsLen, (folsLen - malsLen) * p_graph * p_txDistribution * numRounds * p_malicious)) {
                     outTx.add(tx);
                 }
             }
